@@ -3,6 +3,9 @@ package.path = package.path ..";?.lua;test/?.lua;app/?.lua;"
 require "functions"
 
 
+printf("Pktgen Authors : %s\n", pktgen.info.Pktgen_Authors);
+printf("\nHello World!!!!\n");
+
 delay = 400
 
 for i=100, 1500, 200
