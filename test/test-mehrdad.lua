@@ -3,6 +3,8 @@ package.path = package.path ..";?.lua;test/?.lua;app/?.lua;"
 require "functions"
 
 
+local log_file = "/root/pktgen_5mins."..os.time()..".log";
+
 printf("Pktgen Authors : %s\n", pktgen.info.Pktgen_Authors);
 printf("\nHello World!!!!\n");
 
