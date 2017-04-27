@@ -3,12 +3,17 @@ package.path = package.path ..";?.lua;test/?.lua;app/?.lua;"
 require "functions"
 
 
-local log_file = "pktgen_5mins.log";
+local log_file = "/home/vagrant/pktgenpktgen_5mins.log";
 
 printf("Pktgen Authors : %s\n", pktgen.info.Pktgen_Authors);
 printf("\nHello World!!!!\n");
 
+local sendport = "0";
+local rcvport = "0";
+
 delay = 400
+
+local start_time = os.time();
 
 for i=100, 1500, 200
 do
@@ -17,6 +22,8 @@ do
     pktgen.delay(delay);
     pktgen.stop("all");
 end
+
+local send_for_secs = os.difftime(os.time(), start_time);
 
 
 local stats = pktgen.portStats(sendport..","..rcvport, "port");
